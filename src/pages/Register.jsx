@@ -1,9 +1,27 @@
-export default function Register(){
-  return (<section><h2>Register</h2>
-    <form style={{maxWidth:360}} onSubmit={(e)=>e.preventDefault()}>
-      <label>Username<br/><input type="text" placeholder="Choose a username"/></label><br/><br/>
-      <label>Password<br/><input type="password" placeholder="Create password"/></label><br/><br/>
-      <label>Verify Password<br/><input type="password" placeholder="Re-enter"/></label><br/><br/>
-      <button className="primary" type="submit">Create Account</button>
-    </form></section>)
+export default function Register() {
+  return (
+    <section className="page auth-page">
+      <h2>Register</h2>
+      <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+        <label>
+          Username
+          <input type="text" placeholder="Choose a username" />
+        </label>
+        <label>
+          Password
+          <input type="password" placeholder="Create a password" />
+        </label>
+        <label>
+          Verify Password
+          <input type="password" placeholder="Repeat your password" />
+        </label>
+        <button className="btn primary" type="submit">
+          Create Account
+        </button>
+      </form>
+      <p className="section-note">
+        This page is also a mock and does not store data yet.
+      </p>
+    </section>
+  );
 }

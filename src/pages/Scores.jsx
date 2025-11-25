@@ -1,9 +1,33 @@
-const mocked=[{user:'leafy_panda',count:128},{user:'mint_fox',count:77},{user:'river_otter',count:45}]
-export default function Scores(){
-  return (<section><h2>High Scores (Mock)</h2>
-    <table border="1" cellPadding="8" style={{borderCollapse:'collapse'}}>
-      <thead><tr><th>User</th><th>Sudokus Completed</th></tr></thead>
-      <tbody>{mocked.map((r,i)=><tr key={i}><td>{r.user}</td><td>{r.count}</td></tr>)}</tbody>
-    </table>
-  </section>)
+const MOCK_SCORES = [
+  { user: "PandaPlayer", count: 42 },
+  { user: "OceanSoul", count: 31 },
+  { user: "MintLeaf", count: 18 },
+  { user: "Sunrise", count: 9 },
+];
+
+export default function Scores() {
+  return (
+    <section className="page">
+      <h2>High Scores (Mock)</h2>
+      <p className="section-note">
+        This page currently uses hard-coded data and does not store real scores.
+      </p>
+      <table className="scores-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Sudokus Completed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {MOCK_SCORES.map((row) => (
+            <tr key={row.user}>
+              <td>{row.user}</td>
+              <td>{row.count}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
 }
